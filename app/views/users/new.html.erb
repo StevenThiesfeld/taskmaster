@@ -1,0 +1,25 @@
+<h1>Account Creation</h1>
+<br>
+
+<% if @new_user.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@new_user.errors.count, "error") %> The following issues          must be fixed:
+      </h2>
+      <ul>
+        <% @new_user.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  
+<%= form_for @new_user, url: user_path do |f| %>
+<%= f.label :name %>
+<%= f.text_field :name, required: true %><br>
+<%= f.label :password %>
+<%= f.password_field :password, required: true %><br>
+<%= f.label :password_confirmation %>
+<%= f.password_field :password_confirmation, required:true %><br>
+<%= f.submit "Create Account" %>
+<% end %>

@@ -1,6 +1,14 @@
 Taskmaster::Application.routes.draw do
-  root :to => 'user#home'
-  resources :users
+  root :to => 'users#show'
+  
+  resource :user
+  get "profile", to: 'users#show'
+  
+  get "login" => 'login#login', as: 'login'
+  get "logout" => 'login#logout', as: 'logout'
+  
+  post "verify" => 'login#verify', as: 'verify'
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
