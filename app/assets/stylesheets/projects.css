@@ -2,3 +2,28 @@
   Place all the styles related to the matching controller here.
   They will automatically be included in application.css.
 */
+
+.tab_content, .tab_head, #project_container{
+  border:black solid 1px;
+}
+.tab_content{
+  position:relative;
+  z-index:1;
+  width:90%;
+  margin:0 auto 50px auto;
+}
+
+.tab_head{
+  position:relative;
+  top:-4px;
+  border-bottom:none;
+  background:white;
+  z-index:0;
+}
+a{
+  padding:5px;
+}
+
+.active{
+  z-index:2;
+}
