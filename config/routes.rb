@@ -2,6 +2,7 @@ Taskmaster::Application.routes.draw do
   root :to => 'users#show'
   
   resource :user
+  resources :projects
   get "profile", to: 'users#show'
   
   get "login" => 'login#login', as: 'login'
