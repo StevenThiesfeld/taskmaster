@@ -4,7 +4,13 @@ var navTabs = [];
 var tabs = [];
 var new_task_button,
 veil;
-window.onload = function(){
+var taskHeads = [];
+
+window.onload = function(){ 
+establishEvents()
+}
+
+var establishEvents = function(){
   var links = document.getElementsByClassName("tab_head");
   for (var i = 0; i < links.length; i ++ ) {
     var id = getHash( links[i].getAttribute ("href") );
@@ -18,7 +24,20 @@ window.onload = function(){
   }
   veil = document.getElementById("veil")
   new_task_button = document.getElementById("new_task_button");
-  new_task_button.addEventListener("click", showNewForm);
+  // new_task_button.addEventListener("click", showNewForm);
+  
+  taskHeads = document.getElementsByClassName("task_head_button");
+  for (var i = 0; i < taskHeads.length; i++){
+    taskHeads[i].addEventListener("click", toggleTabBody);
+  }
+}
+
+var toggleTabBody = function(e){
+  e.preventDefault();
+  var body = document.getElementById( getHash(this.getAttribute('href') ) );
+  body.classList.toggle("hidden");
+  
+  this.children[0].classList.toggle("open_img");
 }
 
 
@@ -41,4 +60,8 @@ var swapTab = function(e){
 function getHash( url ) {
   var hashPos = url.lastIndexOf ( '#' );
   return url.substring( hashPos + 1 );
+}
+
+var showNewForm = function(e){
+  veil.classList.toggle("hidden");
 }

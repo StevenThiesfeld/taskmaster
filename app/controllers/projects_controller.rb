@@ -2,6 +2,8 @@ class ProjectsController < ApplicationController
   
   def show
     @project = Project.find(params[:id])
+    session[:project_id] = @project.id
+    set_project_tasks
   end
   
   def new
@@ -14,6 +16,19 @@ class ProjectsController < ApplicationController
       render "show"
     else
       render "new"
+    end
+  end
+  
+  def edit
+    @project = Project.find(params[:id])
+  end
+  
+  def update
+    @project = Project.find(params[:id])
+    if @project.update_attributes(params[:project])
+      redirect_to "/profile"
+    else
+      render "edit"
     end
   end
   

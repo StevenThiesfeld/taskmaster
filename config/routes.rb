@@ -2,11 +2,11 @@ Taskmaster::Application.routes.draw do
   root :to => 'users#show'
   
   resource :user
-  scope shallow_prefix: "sekret" do
-    resources :projects do
-      resources :tasks, shallow: true
-    end
+  resources :projects do
+    resources :tasks, shallow: true
   end
+  
+  put "/tasks/:id/close" => 'tasks#close_task'
   
   get "profile", to: 'users#show'
   

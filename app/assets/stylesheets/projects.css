@@ -27,3 +27,11 @@ a{
 .active{
   z-index:2;
 }
+
+a img{
+  width:10px;
+}
+
+.open_img{
+  transform: rotate(90deg);
+}

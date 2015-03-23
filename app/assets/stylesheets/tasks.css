@@ -3,7 +3,7 @@
   They will automatically be included in application.css.
 */
 
-#new_form_container{
+#form_container{
   position:absolute;
   z-index:11;
   background-color:grey;

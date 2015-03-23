@@ -1,8 +1,16 @@
 <div id="task_<%= task.id %>">
-  <div id="task_<%= task.id %>_head">
-    <h2><%= task.title %> Priority:<%= task.priority %></h2>
+  <div id="task_<%= task.id %>_head" class="task_head">
+    <h2><%=task.id%>: <%= task.title %> Priority:<%= task.priority %>
+     <%= link_to image_tag("left-arrow.png"), "#task_#{task.id}_body", class: "task_head_button open" %><%= link_to "Close", task_path(task), method: "delete", remote:true %></h2>
+   
+   
   </div>
-  <div id="task_<%= task.id %>_body" class="hidden">
-    <p><%= task.body %></p>
+  <div id="task_<%= task.id %>_body" class="task_body hidden">
+    <% if task.body != ""  %>
+      <p><%= task.body %></p>
+    <% else  %>
+      <p>No body home, come back later</p>
+    <% end  %>
+    <%= link_to "Edit", edit_task_path(task), remote:true %>
   </div>
 </div>

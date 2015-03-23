@@ -1,19 +1,23 @@
   <h1><%= @project.name %></h1>
   <br>
   <%= link_to "New Task", new_project_task_path(@project), remote: true, id: "new_task_button" %>
-  <div id="new_form_container">
+  <div id="form_container">
   </div>
   <a href="#open_tasks" class="tab_head active">Open</a>
   <a href="#closed_tasks" class="tab_head">Closed</a>
   <div id="open_tasks" class="tab_content">
-  <% @project.tasks.where(status: "open").each do |task|  %>
+    <% if @open_tasks[0] %>
+  <% @project.tasks.where(status: "open").reverse_order.each do |task|  %>
     <%= render partial: "tasks/display", locals: {task: task} %>
+  <% end  %>
+  <% else  %>
+  <p>No tasks have been opened! Get started slacker!!!</p>
   <% end  %>
   </div>
   
   <div id="closed_tasks" class="tab_content hidden">
-   <% if @project.tasks.where(status:"closed")[0]  %>
-    <% @project.tasks.where(status: "closed").each do |task|  %>
+   <% if @closed_tasks[0]  %>
+    <% @project.tasks.where(status: "closed").reverse_order.each do |task|  %>
       <%= render partial: "tasks/display", locals: {task: task} %>
     <% end  %>
    <% else  %>
