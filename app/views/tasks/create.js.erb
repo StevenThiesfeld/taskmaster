@@ -1,0 +1,4 @@
+$("#new_form_container").html("")
+veil.classList.toggle("hidden")
+$("#project_container").html("<%= escape_javascript(render partial: 'projects/full_display', locals: {project: @project } ) %>")
+alert("Task Created!")

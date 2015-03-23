@@ -1,6 +1,4 @@
-<h1><%= @project.name %></h1>
-<br>
-<button id="new_task_button">New Task</button>
-<% @project.tasks.each do |task|  %>
-  <%= render partial: "tasks/display", locals: {task: task} %>
-<% end  %>
+<div id="veil" class="hidden"></div>
+<div id="project_container">
+<%= render partial: "full_display", locals: {project: @project} %>
+</div>

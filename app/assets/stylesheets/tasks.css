@@ -1,0 +1,25 @@
+/*
+  Place all the styles related to the matching controller here.
+  They will automatically be included in application.css.
+*/
+
+#new_form_container{
+  position:absolute;
+  z-index:2;
+  background-color:grey;
+}
+
+#veil{
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  z-index:2;
+  background-color:black;
+  opacity:.7;
+}
+
+.hidden{
+  display:none;
+}

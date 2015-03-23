@@ -2,7 +2,12 @@ Taskmaster::Application.routes.draw do
   root :to => 'users#show'
   
   resource :user
-  resources :projects
+  scope shallow_prefix: "sekret" do
+    resources :projects do
+      resources :tasks, shallow: true
+    end
+  end
+  
   get "profile", to: 'users#show'
   
   get "login" => 'login#login', as: 'login'

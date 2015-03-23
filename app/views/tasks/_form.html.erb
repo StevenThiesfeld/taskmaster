@@ -1,0 +1,21 @@
+<% if @task.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@task.errors.count, "error") %> The following issues          must be fixed:
+      </h2>
+      <ul>
+        <% @task.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+<% end %>
+<%= form_for [@project, @task], remote: true do |f| %>
+<%= f.label :title %>
+<%= f.text_field :title %><br>
+<%= f.label :body %>
+<%= f.text_area :body %><br>
+<%= f.label :priority %><
+<%= f.select :priority, ["low", "normal", "high"] %><br>
+<%= f.submit "Create Task" %>
+<% end  %>

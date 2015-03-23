@@ -1,0 +1,20 @@
+  <h1><%= @project.name %></h1>
+  <br>
+  <%= link_to "New Task", new_project_task_path(@project), remote: true, id: "new_task_button" %>
+  <div id="new_form_container">
+  </div>
+  <a href="#open_tasks" class="tab_head">Open</a>
+  <a href="#closed_tasks" class="tab_head">Closed</a>
+  <div id="open_tasks" class="tab_content">
+  <% @project.tasks.where(status: "open").each do |task|  %>
+    <%= render partial: "tasks/display", locals: {task: task} %>
+  <% end  %>
+  </div>
+  
+  <div id="closed_tasks" class="tab_content hidden">
+    <% @project.tasks.where(status: "closed").each do |task|  %>
+      <%= render partial: "tasks/display", locals: {task: task} %>
+    <% end  %>
+  </div>
+    
+  
