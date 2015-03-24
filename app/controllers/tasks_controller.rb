@@ -14,7 +14,11 @@ class TasksController < ApplicationController
   
   def destroy
     @task = Task.find(params[:id])
-    @task.status = "closed"
+    if @task.status == "open"
+      @task.status = "closed"
+    else 
+      @task.status = "open"
+    end
     @task.save!
     render "update_project"
   end

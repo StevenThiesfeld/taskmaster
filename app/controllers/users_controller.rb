@@ -4,6 +4,7 @@ class UsersController < ApplicationController
   
   
   def show
+    session[:project_id] = nil
   end
   
   def new

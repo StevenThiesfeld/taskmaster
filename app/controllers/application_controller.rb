@@ -7,7 +7,7 @@ class ApplicationController < ActionController::Base
   def require_login
     if session[:user_id]
       @user = User.find(session[:user_id])
-      @project = Project.find(session[:project_id]) if session[:project_id]
+      @project = Project.find_by_id(session[:project_id]) if session[:project_id]
     else
       redirect_to "/login"
     end

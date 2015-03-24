@@ -13,7 +13,7 @@ class ProjectsController < ApplicationController
   def create
     @project = Project.new(params[:project])
     if @project.save
-      render "show"
+      redirect_to project_path(@project)
     else
       render "new"
     end
