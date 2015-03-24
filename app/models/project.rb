@@ -6,7 +6,7 @@ class Project < ActiveRecord::Base
   after_initialize :defaults
   
   has_many :tasks
-  
+  belongs_to :user
   def defaults
     self.status ||= "open"
   end

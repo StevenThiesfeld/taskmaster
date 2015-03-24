@@ -5,6 +5,7 @@ class User < ActiveRecord::Base
   validates :password, length: {in: 6..24}
   after_initialize :defaults
   has_many :projects
+  has_many :comments
   
   def defaults
     self.clearance ||= "user"

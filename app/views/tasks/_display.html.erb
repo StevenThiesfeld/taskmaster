@@ -14,5 +14,12 @@
     <% if task.status == "open"  %>
       <%= link_to "Edit", edit_task_path(task), remote:true %>
     <% end  %>
+    <div id="comments">
+      <%= task.comments.each do |comment|%>
+        <%= render partial: "comments/display", locals: {comment: comment} %>
+      <% end  %>
+    </div>
+    <div id="comment_form">
+      
   </div>
 </div>

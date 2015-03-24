@@ -4,7 +4,7 @@ class Task < ActiveRecord::Base
   after_initialize :defaults
   
   validates :title, presence: true
-  
+  has_many :comments
   def defaults
     self.status ||= "open"
     self.priority ||= "normal"
