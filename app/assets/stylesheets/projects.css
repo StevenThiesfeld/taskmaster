@@ -4,20 +4,19 @@
 */
 
 .tab_content, .tab_head, #project_container{
-  border:black solid 1px;
-}
+/*  border:black solid 1px;
+*/}
 .tab_content{
+  background:#BCBABA;
   position:relative;
   z-index:1;
-  width:90%;
-  margin:0 auto 50px auto;
+
 }
 
 .tab_head{
+  width:45%;
   position:relative;
-  top:-4px;
   border-bottom:none;
-  background:white;
   z-index:0;
 }
 a{
@@ -25,6 +24,7 @@ a{
 }
 
 .active{
+  background:#636161;
   z-index:2;
 }
 
@@ -34,4 +34,9 @@ a img{
 
 .open_img{
   transform: rotate(90deg);
+}
+
+.task_head h2{
+  padding-top:5px;
+  margin-top:0;
 }

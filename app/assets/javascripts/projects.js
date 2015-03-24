@@ -47,10 +47,10 @@ var swapTab = function(e){
   
   for (var id in tabs){
     if ( id == selectedId ) {
-      navTabs[id].className = 'tab_head active';
+      navTabs[id].classList.toggle('active');
       tabs[id].className = 'tab_content';
     } else {
-      navTabs[id].className = 'tab_head';
+      navTabs[id].classList.toggle('active');
       tabs[id].className = 'tab_content hidden';
     }
   }

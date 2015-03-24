@@ -1,10 +1,13 @@
   <h1><%= @project.name %></h1>
   <br>
-  <%= link_to "New Task", new_project_task_path(@project), remote: true, id: "new_task_button" %>
+  <%= link_to "New Task", new_project_task_path(@project), remote: true, id: "new_task_button", class: "link" %><br><br>
   <div id="form_container">
   </div>
-  <a href="#open_tasks" class="tab_head active">Open</a>
-  <a href="#closed_tasks" class="tab_head">Closed</a>
+  <div id="tab_head_container">
+    <a href="#open_tasks" class="link tab_head active">Open</a>
+    <a href="#closed_tasks" class="link tab_head">Closed</a>
+    <div style="clear: both;"></div>
+  </div>
   <div id="open_tasks" class="tab_content">
     <% if @open_tasks[0] %>
   <% @project.tasks.where(status: "open").reverse_order.each do |task|  %>
