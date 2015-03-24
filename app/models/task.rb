@@ -3,7 +3,8 @@ class Task < ActiveRecord::Base
   
   after_initialize :defaults
   
-  validates :title, presence: true
+  validates :title, presence: true 
+  validates :title, length: {in: 1..30}, if: " title != '' " 
   has_many :comments
   def defaults
     self.status ||= "open"

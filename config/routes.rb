@@ -5,6 +5,7 @@ Taskmaster::Application.routes.draw do
   resources :projects do
     resources :tasks, shallow: true
   end
+  resources :comments
   
   put "/tasks/:id/close" => 'tasks#close_task'
   
