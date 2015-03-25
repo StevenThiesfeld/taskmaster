@@ -26,7 +26,7 @@ var establishEvents = function(){
   new_task_button = document.getElementById("new_task_button");
   // new_task_button.addEventListener("click", showNewForm);
   
-  taskHeads = document.getElementsByClassName("task_head_button");
+  taskHeads = document.getElementsByClassName("task_head");
   for (var i = 0; i < taskHeads.length; i++){
     taskHeads[i].addEventListener("click", toggleTabBody);
   }
@@ -34,10 +34,11 @@ var establishEvents = function(){
 
 var toggleTabBody = function(e){
   e.preventDefault();
-  var body = document.getElementById( getHash(this.getAttribute('href') ) );
+  var anchor = this.children[0].children[0];
+  var body = document.getElementById( getHash(anchor.getAttribute('href') ) );
   body.classList.toggle("hidden");
   
-  this.children[0].classList.toggle("open_img");
+  anchor.children[0].classList.toggle("open_img");
 }
 
 

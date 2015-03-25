@@ -6,14 +6,14 @@
    
   </div>
   <div id="task_<%= task.id %>_body" class="task_body hidden">
-    <%= link_to task.status == "open" ? "Close" : "Open", task_path(task), method: "delete", remote:true, class: "link" %>
     <% if task.body != ""  %>
       <p><%= task.body %></p>
     <% else  %>
       <p>No body home, come back later</p>
     <% end  %>
+    <%= link_to task.status == "open" ? "Close" : "Open", task_path(task), method: "delete", remote:true, class: "link" %>
     <% if task.status == "open"  %>
-      <%= link_to "Edit", edit_task_path(task), remote:true %>
+      <%= link_to "Edit", edit_task_path(task), remote:true, class: "link" %>
     <% end  %>
     <div id="comments">
       <% task.comments.each do |comment|%>
@@ -23,10 +23,10 @@
     <div id="comment_form">
       <%= form_for task.comments.build, remote: true do |f| %>
       <%= f.label :body, "New Comment" %><br>
-      <%= f.text_area :body, required: true, size: "30x10" %>
+      <%= f.text_area :body, required: true, size: "30x4" %><br>
       <%= f.hidden_field :user_id, value: session[:user_id] %>
       <%= f.hidden_field :task_id, value: task.id %>
-      <%= f.submit %>
+      <%= f.submit "Comment", class: "link" %>
       <% end %>
     </div>
   </div>

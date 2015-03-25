@@ -23,3 +23,21 @@
 .hidden{
   display:none;
 }
+
+.task_head h2{
+  padding-top:15px;
+  padding-bottom:15px;
+  margin:0;
+}
+.task_head{
+  cursor:pointer;
+  transition:.5s; 
+}
+
+.task_head:hover{
+  background:#636161;
+}
+
+textarea{
+  color:black;
+}

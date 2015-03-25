@@ -7,7 +7,7 @@
 /*  border:black solid 1px;
 */}
 .tab_content{
-  background:#BCBABA;
+  background:#908F8F;
   position:relative;
   z-index:1;
 
@@ -36,7 +36,3 @@ a img{
   transform: rotate(90deg);
 }
 
-.task_head h2{
-  padding-top:5px;
-  margin-top:0;
-}
