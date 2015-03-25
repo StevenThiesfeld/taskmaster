@@ -12,6 +12,15 @@ class TasksController < ApplicationController
     end
   end
   
+  def update_row_order
+    @open_tasks.each do |task|
+      task.row_order = params["#{task.id}"]
+      task.save!
+    end
+
+      render nothing: true # this is a POST action, updates sent via AJAX, no view rendered
+    end
+  
   def destroy
     @task = Task.find(params[:id])
     if @task.status == "open"

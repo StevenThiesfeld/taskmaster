@@ -1,3 +1,2 @@
- // showNewForm()
-$("#veil").removeClass("hidden")
+$("#veil").removeClass("hidden");
  $("#form_container").html("<%= escape_javascript(render partial: 'form', locals: { task: @task, project: @project } ) %>"); 

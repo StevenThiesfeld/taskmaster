@@ -15,7 +15,7 @@ class ApplicationController < ActionController::Base
   
   def set_project_tasks
     if @project
-      @open_tasks = @project.tasks.where(status: "open").reverse_order
+      @open_tasks = @project.tasks.where(status: "open").order(:row_order)
       @closed_tasks = @project.tasks.where(status: "closed").order('updated_at DESC')
     end
   end

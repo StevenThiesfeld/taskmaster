@@ -3,12 +3,12 @@ Taskmaster::Application.routes.draw do
   
   resource :user
   resources :projects do
-    resources :tasks, shallow: true
+    resources :tasks, shallow: true 
   end
   resources :comments
   
   put "/tasks/:id/close" => 'tasks#close_task'
-  
+  put "/update_list" => 'tasks#update_row_order'
   get "profile", to: 'users#show'
   
   get "login" => 'login#login', as: 'login'

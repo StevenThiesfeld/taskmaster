@@ -3,4 +3,5 @@ class AddOrder < ActiveRecord::Migration
     change_table :tasks do |t|
       t.integer :row_order
     end
+  end
 end
