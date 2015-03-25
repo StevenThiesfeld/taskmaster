@@ -8,7 +8,7 @@ Taskmaster::Application.routes.draw do
   resources :comments
   
   put "/tasks/:id/close" => 'tasks#close_task'
-  put "/update_list" => 'tasks#update_row_order'
+  put "/update_list" => 'tasks#update_row_ordering'
   get "profile", to: 'users#show'
   
   get "login" => 'login#login', as: 'login'

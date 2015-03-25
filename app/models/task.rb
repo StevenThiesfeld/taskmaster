@@ -1,14 +1,14 @@
 class Task < ActiveRecord::Base
-  attr_accessible :body, :created_by, :priority, :project, :status, :title, :user_id, :row_order
-  after_initialize :defaults
+  attr_accessible :body, :created_by, :priority, :project, :status, :title, :user_id, :row_ordering
+  after_initialize :set_defaults
   
   validates :title, presence: true 
   validates :title, length: {in: 1..30}, if: " title != '' " 
   has_many :comments
-  def defaults
+  def set_defaults
     self.status ||= "open"
     self.priority ||= "normal"
-    self.row_order ||= -1
+    self.row_ordering ||= -1
   end
   
 end

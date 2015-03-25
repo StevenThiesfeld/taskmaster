@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20150325151930) do
+ActiveRecord::Schema.define(:version => 20150325214611) do
 
   create_table "comments", :force => true do |t|
     t.text     "body"
@@ -38,9 +38,9 @@ ActiveRecord::Schema.define(:version => 20150325151930) do
     t.integer  "project_id"
     t.text     "priority"
     t.text     "status"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-    t.integer  "row_order"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+    t.integer  "row_ordering"
   end
 
   create_table "users", :force => true do |t|

@@ -12,9 +12,9 @@ class TasksController < ApplicationController
     end
   end
   
-  def update_row_order
+  def update_row_ordering
     @open_tasks.each do |task|
-      task.row_order = params["#{task.id}"]
+      task.row_ordering = params["#{task.id}"]
       task.save!
     end
 
