@@ -7,7 +7,7 @@
 <p><%= @errors[:password] %></p>
 <%= label_tag :password %>
 <%= password_field_tag :password %><br>
-<%= submit_tag "Login" %>
+<%= submit_tag "Login", class: "link" %>
 <% end %>
 <br>
 <%= link_to "New Accout Signup", new_user_path %>

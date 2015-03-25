@@ -53,3 +53,7 @@ ul li{
 .link:hover{
   background:#636161;
 }
+
+textarea, input{
+  color:black;
+}
