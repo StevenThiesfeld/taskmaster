@@ -10,7 +10,7 @@
   </div>
   <div id="open_tasks" class="tab_content">
     <% if @open_tasks[0] %>
-  <% @project.tasks.where(status: "open").reverse_order.each do |task|  %>
+  <% @open_tasks.each do |task|  %>
     <%= render partial: "tasks/display", locals: {task: task} %>
   <% end  %>
   <% else  %>
@@ -20,7 +20,7 @@
   
   <div id="closed_tasks" class="tab_content hidden">
    <% if @closed_tasks[0]  %>
-    <% @project.tasks.where(status: "closed").reverse_order.each do |task|  %>
+    <% @closed_tasks.each do |task|  %>
       <%= render partial: "tasks/display", locals: {task: task} %>
     <% end  %>
    <% else  %>
