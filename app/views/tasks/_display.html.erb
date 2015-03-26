@@ -1,11 +1,11 @@
-<div id="<%= task.id %>_task">
-  <div id="task_<%= task.id %>_head" class="task_head">
-    <h2><%=task.id%>: <%= task.title %> 
-     <%= link_to image_tag("left-arrow.png"), "#task_#{task.id}_body", class: "task_head_button open" %></h2>
+<div id="<%= task.task_number %>_task">
+  <div id="task_<%= task.task_number %>_head" class="task_head">
+    <h2><%=task.task_number%>: <%= task.title %> 
+     <%= link_to image_tag("left-arrow.png"), "#task_#{task.task_number}_body", class: "task_head_button open" %></h2>
    
    
   </div>
-  <div id="task_<%= task.id %>_body" class="task_body hidden">
+  <div id="task_<%= task.task_number %>_body" class="task_body hidden">
     <% if task.body != ""  %>
       <p><%= task.body %></p>
     <% else  %>

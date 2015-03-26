@@ -6,7 +6,9 @@ class TasksController < ApplicationController
   
   def create
     @task = @project.tasks.build(params[:task])
+    @task.task_number = @open_tasks.length + @closed_tasks.length + 1
     if @task.save
+      @open_tasks.unshift(@task)
     else
       render "new"
     end
@@ -14,7 +16,7 @@ class TasksController < ApplicationController
   
   def update_row_ordering
     @open_tasks.each do |task|
-      task.row_ordering = params["#{task.id}"]
+      task.row_ordering = params["#{task.task_number}"]
       task.save!
     end
 
