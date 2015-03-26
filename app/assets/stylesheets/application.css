@@ -51,7 +51,8 @@ ul li{
 
 .link:hover{
   transition:.5s;
-  
+  text-decoration:none;
+  color:#EFEDED;
   background:#636161;
 }
 
