@@ -1,6 +1,6 @@
-$("#new_form_container").html("");
 veil.classList.add("hidden");
 $("#project_container").html("<%= escape_javascript(render partial: 'projects/full_display',
 locals: {project: @project, open_tasks: @open_tasks, closed_tasks: @closed_tasks } ) %>");
 establishEvents();
 makeSortable();
+updatePosition();
