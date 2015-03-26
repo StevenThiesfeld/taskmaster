@@ -28,3 +28,9 @@ var updatePosition = function(ev){
     data: newPositions,  // or whatever your new position is
   });
 }
+
+function closeForm(ev){
+  ev.preventDefault();
+  document.getElementById("form_container").innerHTML = "";
+  veil.classList.toggle("hidden");
+}
