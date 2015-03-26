@@ -5,9 +5,8 @@ var tabs = [];
 var new_task_button,
 veil;
 var taskHeads = [];
-window.onload = function(){ 
+window.onload = function(){
   establishEvents();
- 
 }
 
 var establishEvents = function(){
