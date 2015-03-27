@@ -6,6 +6,7 @@ class User < ActiveRecord::Base
   after_initialize :defaults
   has_many :projects
   has_many :comments
+  has_many :teams
   
   def defaults
     self.clearance ||= "user"

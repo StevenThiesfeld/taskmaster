@@ -6,6 +6,7 @@ Taskmaster::Application.routes.draw do
     resources :tasks, shallow: true 
   end
   resources :comments
+  resources :teams
   
   put "/tasks/:id/close" => 'tasks#close_task'
   put "/update_list" => 'tasks#update_row_ordering'

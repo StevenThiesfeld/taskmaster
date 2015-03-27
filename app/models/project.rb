@@ -7,6 +7,9 @@ class Project < ActiveRecord::Base
   
   has_many :tasks
   belongs_to :user
+  has_many :teams
+  has_many :members, :through => :teams
+  
   def defaults
     self.status ||= "open"
   end
